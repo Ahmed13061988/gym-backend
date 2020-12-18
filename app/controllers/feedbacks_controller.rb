@@ -1,12 +1,12 @@
 class FeedbacksController < ApplicationController
     def create
-        review = logged_in_user.reviews.create(review_params)
-        render json: review
+        feedback = logged_in_user.feedbacks.create(feedback_params)
+        render json: feedback
       end
     
       private
     
       def review_params
-        params.permit(:restaurant_id, :content, :rating)
+        params.permit(:gym_id, :content, :rating)
       end
 end
